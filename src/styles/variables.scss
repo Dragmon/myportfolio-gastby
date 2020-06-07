@@ -1,0 +1,22 @@
+$color-primary: #1565c0;
+$fading-color-primary: rgba(21, 101, 192, 0.4);
+$color-secondary: #721817;
+$background-body: #fdfefa;
+$background-description: #051a6b;
+$background-button: #ac9c91;
+$color-text1: #fdfefa;
+$color-text2: #051a6b;
+$font-main: "Nunito", sans-serif;
+$font-secondary: "Roboto", sans-serif;
+$breakpoint-movil: 500px;
+$breakpoint-tablet: 800px;
+$breakpoint-desktop-1300: 1300px;
+$breakpoint-desktop-1600: 1600px;
+
+@mixin widthSection {
+  width: 70%;
+  margin: 0 auto;
+  @media (max-width: $breakpoint-movil) {
+    width: 65%;
+  }
+}

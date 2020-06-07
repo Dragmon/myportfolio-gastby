@@ -1,0 +1,65 @@
+@import "./variables.scss";
+header {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  background-color: $fading-color-primary;
+}
+.contHeader {
+  max-width: 1500px;
+  height: 100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  img {
+    width: 40%;
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      padding: 0 0 0 15%;
+    }
+  }
+}
+nav {
+  width: 250px;
+  padding: 1em;
+  height: 100vh;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0%, 75% 5%, 100% 10%, 25% 10%, 0% 5%, 25% 0%);
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 40% 100%, 20% 50%, 0% 0%);
+    background-color: $color-primary;
+    position: absolute;
+    top: 0;
+  }
+  span {
+    position: absolute;
+    float: right;
+    top: 33px;
+    color: $color-text1;
+    font-size: 30px;
+    @media (max-width: $breakpoint-tablet) {
+      right: 70px;
+    }
+    @media (max-width: $breakpoint-movil) {
+      font-size: 25px;
+    }
+  }
+  li {
+    list-style: none;
+    font-size: 20px;
+    line-height: 3em;
+  }
+}

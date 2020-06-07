@@ -1,0 +1,67 @@
+.works {
+  height: calc(100vh - 100px);
+  background-image: url(../images/background-wok.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  .titleSection {
+    color: $color-text1;
+    @media (max-width: $breakpoint-desktop-1300) {
+      position: relative;
+      top: 0;
+    }
+  }
+  @media (max-width: $breakpoint-desktop-1300) {
+    height: auto;
+    padding: 25px 0;
+  }
+}
+.blockWork {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-template-rows: 475px;
+  grid-gap: 30px;
+  @include widthSection;
+  @media (max-width: $breakpoint-desktop-1300) {
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    grid-template-rows: auto;
+    margin: 25px auto;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-template-rows: auto;
+  }
+}
+
+.gridItem {
+  position: relative;
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:nth-child(even) {
+    align-self: end;
+    a {
+      top: 20%;
+    }
+  }
+  &:nth-child(odd) {
+    a {
+      top: 10%;
+    }
+  }
+  img {
+    width: 80%;
+  }
+  a {
+    position: absolute;
+    left: 85%;
+    font-size: 1.6rem;
+    border-bottom: 3px solid $color-secondary;
+  }
+}
