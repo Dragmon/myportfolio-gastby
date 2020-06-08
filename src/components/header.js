@@ -1,53 +1,36 @@
-/* import { Link } from "gatsby"
-import PropTypes from "prop-types" */
+/*import PropTypes from "prop-types" */
 import React from "react"
+import { Link } from "gatsby"
 import logo from "../images/Logo.png"
+import iconoMenu from "../images/iconos/icono-menu.png"
 import "../styles/header.scss"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header>
-    {/* <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div> */}
     <div className="contHeader">
       <div className="logo">
-        <img src={logo} alt="Logo Carlos Pérez" />
+        <Link to="/">
+          <img src={logo} alt="Logo Carlos Pérez" />
+        </Link>
       </div>
       <nav className="menu">
-        <span className="fas fa-bars">
-        </span>
+        {/* <span className="fas fa-bars">
+        </span> */}
+        <img src={iconoMenu} alt="Menú" />
         <ul>
-          <li> <a href="#myInfomation">Sobre mi </a></li>
-          <li> <a href="#skills">Skills</a></li>
-          <li> <a href="#works">Mi trabajo</a></li>
+          <li>
+            <Link to="/#myInfomation"> Sobre mi </Link>
+          </li>
+          <li>
+            <Link to="/#skills"> Skills </Link>
+          </li>
+          <li>
+            <Link to="/#works"> Mi Proyectos </Link>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 )
-
-/* Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-} */
 
 export default Header

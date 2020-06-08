@@ -1,6 +1,6 @@
 @import "./variables.scss";
 header {
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   width: 100%;
   background-color: $fading-color-primary;
@@ -18,7 +18,7 @@ header {
   display: flex;
   align-items: center;
   img {
-    width: 40%;
+    width: 80%;
     @media (max-width: $breakpoint-tablet) {
       width: 100%;
       padding: 0 0 0 15%;
@@ -44,12 +44,12 @@ nav {
     position: absolute;
     top: 0;
   }
-  span {
+  img {
     position: absolute;
     float: right;
     top: 33px;
     color: $color-text1;
-    font-size: 30px;
+    width: 30px;
     @media (max-width: $breakpoint-tablet) {
       right: 70px;
     }

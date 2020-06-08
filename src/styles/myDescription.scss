@@ -1,0 +1,32 @@
+.myInfomation {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: $color-text1;
+  text-align: center;
+  background-image: url(../images/background-description.png);
+  @media (max-width: $breakpoint-movil) {
+    height: auto;
+    background-position: right;
+    background-size: cover;
+  }
+}
+
+.contInfo {
+  z-index: 0;
+  @include widthSection;
+  @media (max-width: $breakpoint-movil) {
+    padding: 30% 0 25px;
+  }
+  h1,
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+.contact {
+  margin: 25px 0 0 0;
+  img {
+    margin: 10px 20px;
+    width: 50px;
+  }
+}

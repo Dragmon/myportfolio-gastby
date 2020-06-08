@@ -23,7 +23,7 @@
 .blockWork {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-  grid-template-rows: 475px;
+  grid-template-rows: 500px;
   grid-gap: 30px;
   @include widthSection;
   @media (max-width: $breakpoint-desktop-1300) {
@@ -34,6 +34,9 @@
   @media (max-width: $breakpoint-tablet) {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     grid-template-rows: auto;
+  }
+  @media (max-width: $breakpoint-movil) {
+    width: 60%;
   }
 }
 

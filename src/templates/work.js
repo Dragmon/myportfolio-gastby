@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import iconReturn from "../images/iconos/icono-return.png"
 
 export const query = graphql`
   query workQuery($id: String!){
@@ -35,9 +36,7 @@ const workTemplate = ({ data }) => {
         </div>
         <div className="infoSitio">
           <Link to="/">
-            <button className="linkHome">
-              Regresar
-            </button>
+            <img src={iconReturn} className="linkHome" alt="return" />
           </Link>
           <div className="positionInfo">
             <h2>
@@ -46,7 +45,7 @@ const workTemplate = ({ data }) => {
             <p>
               {data.strapiProjects.Description_project}
             </p>
-            <a href={data.strapiProjects.url_site} target="_blank">
+            <a href={data.strapiProjects.url_site} target="_blank" rel="noreferrer">
               <button>
                 Visitar sitio
             </button>

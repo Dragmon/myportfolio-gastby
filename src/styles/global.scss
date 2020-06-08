@@ -64,7 +64,11 @@ a {
 }
 .linkHome {
   margin: 10px 50px;
+  width: 30px;
 }
 
+@import "./myDescription.scss";
+@import "./skills.scss";
 @import "./works.scss";
 @import "./interiorWork.scss";
+@import "./404.scss";
