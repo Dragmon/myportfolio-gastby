@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Mydescription from "../components/mydescription"
 
 export const query = graphql`
-  query IndexQuery{
+  query IndexQuery {
     allStrapiProjects {
       edges {
         node {
@@ -16,7 +16,7 @@ export const query = graphql`
             absolutePath
             childImageSharp {
               id
-              fluid(maxWidth: 500){
+              fluid(maxWidth: 500) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -31,8 +31,10 @@ export const query = graphql`
           id
           name_skill
           image_skill {
+            extension
+            publicURL
             childImageSharp {
-              fixed(height: 125) {
+              fixed(width: 125) {
                 ...GatsbyImageSharpFixed
               }
             }
@@ -40,7 +42,6 @@ export const query = graphql`
         }
       }
     }
-
   }
 `
 
@@ -60,7 +61,14 @@ const IndexPage = ({ data }) => {
           {data.allStrapiSkills.edges.map(document => (
             <div key={document.node.id} className="imageSkill">
               {/* <Img fluid={document.node.image_skill.childImageSharp.fluid} /> */}
-              <Img fixed={document.node.image_skill.childImageSharp.fixed} alt={document.node.name_skill} />
+              {/* <Img
+                fixed={document.node.image_skill.childImageSharp.fixed}
+                alt={document.node.name_skill}
+              /> */}
+              <img
+                src={document.node.image_skill.publicURL}
+                alt={document.node.name_skill}
+              />
             </div>
           ))}
         </div>
@@ -73,10 +81,13 @@ const IndexPage = ({ data }) => {
         <div className="blockWork">
           {data.allStrapiProjects.edges.map(document => (
             <div key={document.node.id} className="gridItem">
-              <Img fluid={document.node.featured_image.childImageSharp.fluid} alt={document.node.name_project} />
-              <h3>
-                <Link to={`/${document.node.id}`}>{document.node.name_project}</Link>
-              </h3>
+              <Link to={`/${document.node.id}`}>
+                <Img
+                  fluid={document.node.featured_image.childImageSharp.fluid}
+                  alt={document.node.name_project}
+                />
+                <h3>{document.node.name_project}</h3>
+              </Link>
             </div>
           ))}
         </div>

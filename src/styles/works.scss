@@ -36,7 +36,8 @@
     grid-template-rows: auto;
   }
   @media (max-width: $breakpoint-movil) {
-    width: 60%;
+    width: 70%;
+    margin: 25px 0 25px 30px;
   }
 }
 
@@ -49,19 +50,19 @@
   }
   &:nth-child(even) {
     align-self: end;
-    a {
+    h3 {
       top: 20%;
     }
   }
   &:nth-child(odd) {
-    a {
+    h3 {
       top: 10%;
     }
   }
-  img {
+  /* img {
     width: 80%;
-  }
-  a {
+  } */
+  h3 {
     position: absolute;
     left: 85%;
     font-size: 1.6rem;

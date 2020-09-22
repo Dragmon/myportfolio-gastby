@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `My Portfolio`,
-    description: `Portfolio de Proyects`,
+    description: `Portfolio de Proyectos`,
     author: `Carlos Gerardo Pérez Horta`,
   },
   plugins: [
@@ -12,8 +12,8 @@ module.exports = {
       options: {
         options: {
           path: `@import ${__dirname}/src/styles/global.scss`,
-        }
-      }
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -26,6 +26,7 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "http://localhost:1337",
+        /* apiURL: "https://strapi-my-dashboard.herokuapp.com", */
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           `Skills`,

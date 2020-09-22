@@ -4,17 +4,29 @@
   justify-content: center;
   background-color: $background-description;
   padding: 100px 0 0 0;
+  @media (max-width: $breakpoint-movil) {
+    flex-direction: column-reverse;
+  }
 }
 .imgSitio {
   width: 70%;
+  @media (max-width: $breakpoint-movil) {
+    width: 100%;
+  }
 }
 .infoSitio {
   width: 30%;
   background-color: $background-description;
   color: $color-text1;
+  @media (max-width: $breakpoint-movil) {
+    width: 100%;
+  }
   .positionInfo {
     position: fixed;
     padding: 30px 50px;
+    @media (max-width: $breakpoint-movil) {
+      position: relative;
+    }
     h2 {
       font-weight: 600;
       font-size: 2.5em;

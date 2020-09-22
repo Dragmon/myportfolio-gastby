@@ -6,8 +6,8 @@ import Layout from "../components/layout"
 import iconReturn from "../images/iconos/icono-return.png"
 
 export const query = graphql`
-  query workQuery($id: String!){
-    strapiProjects(id: {eq: $id}){
+  query workQuery($id: String!) {
+    strapiProjects(id: { eq: $id }) {
       id
       name_project
       url_site
@@ -32,23 +32,24 @@ const workTemplate = ({ data }) => {
       <SEO title={data.strapiProjects.name_project} />
       <section className="contentWork">
         <div className="imgSitio">
-          <Img fluid={data.strapiProjects.image_website.childImageSharp.fluid} alt={data.strapiProjects.name_project} />
+          <Img
+            fluid={data.strapiProjects.image_website.childImageSharp.fluid}
+            alt={data.strapiProjects.name_project}
+          />
         </div>
         <div className="infoSitio">
-          <Link to="/">
-            <img src={iconReturn} className="linkHome" alt="return" />
-          </Link>
           <div className="positionInfo">
-            <h2>
-              {data.strapiProjects.name_project}
-            </h2>
-            <p>
-              {data.strapiProjects.Description_project}
-            </p>
-            <a href={data.strapiProjects.url_site} target="_blank" rel="noreferrer">
-              <button>
-                Visitar sitio
-            </button>
+            <Link to="/#works">
+              <img src={iconReturn} className="linkHome" alt="return" />
+            </Link>
+            <h2>{data.strapiProjects.name_project}</h2>
+            <p>{data.strapiProjects.Description_project}</p>
+            <a
+              href={data.strapiProjects.url_site}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button>Visitar sitio</button>
             </a>
           </div>
         </div>
@@ -57,5 +58,4 @@ const workTemplate = ({ data }) => {
   )
 }
 
-export default workTemplate;
-
+export default workTemplate
