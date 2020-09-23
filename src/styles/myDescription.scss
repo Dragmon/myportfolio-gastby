@@ -4,8 +4,8 @@
   align-items: center;
   color: $color-text1;
   text-align: center;
- /*  background-image: url(../images/background-description.png); */
- background-color: #000;
+  background-image: url(../images/background.svg);
+  background-size: cover;
   @media (max-width: $breakpoint-movil) {
     height: auto;
     background-position: right;

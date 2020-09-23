@@ -1,21 +1,18 @@
 .skills {
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 100px); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   @include widthSection;
-  @media (max-width: $breakpoint-tablet) {
+  /* @media (max-width: $breakpoint-tablet) {
     height: auto;
-    margin: 25px auto;
-  }
+  } */
   @media (max-width: $breakpoint-movil) {
     width: 100%;
   }
 }
-.titleSection {
-  position: absolute;
-  top: 5%;
+/* .titleSection {
   width: 100%;
   text-align: center;
   color: $color-text2;
@@ -23,7 +20,7 @@
     position: relative;
     top: 0;
   }
-}
+} */
 .blockSkills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
@@ -33,6 +30,11 @@
   @media (max-width: $breakpoint-tablet) {
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
     gap: 15px;
+  }
+  .imageSkill:nth-child(1) {
+    img {
+      width: 70%;
+    }
   }
 }
 .imageSkill {

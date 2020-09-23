@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `My Portfolio`,
-    description: `Portfolio de Proyectos`,
+    description: `Software Developmentt especialista en FrontEnd`,
     author: `Carlos Gerardo Pérez Horta`,
   },
   plugins: [
