@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Mydescription from "../components/mydescription"
+import Footer from "../components/footer"
 
 export const query = graphql`
   query IndexQuery {
@@ -92,6 +93,7 @@ const IndexPage = ({ data }) => {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   )
 }

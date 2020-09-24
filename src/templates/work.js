@@ -3,7 +3,8 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import iconReturn from "../images/iconos/icono-return.png"
+import Footer from "../components/footer"
+import { ReturnIcon } from "../components/return-icon"
 
 export const query = graphql`
   query workQuery($id: String!) {
@@ -36,11 +37,12 @@ const workTemplate = ({ data }) => {
             fluid={data.strapiProjects.image_website.childImageSharp.fluid}
             alt={data.strapiProjects.name_project}
           />
+          <Footer />
         </div>
         <div className="infoSitio">
           <div className="positionInfo">
             <Link to="/#works">
-              <img src={iconReturn} className="linkHome" alt="return" />
+              <ReturnIcon />
             </Link>
             <h2>{data.strapiProjects.name_project}</h2>
             <p>{data.strapiProjects.Description_project}</p>

@@ -31,11 +31,11 @@
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
     gap: 15px;
   }
-  .imageSkill:nth-child(1) {
+  /* .imageSkill:nth-child(1) {
     img {
       width: 70%;
     }
-  }
+  } */
 }
 .imageSkill {
   display: flex;
@@ -46,7 +46,7 @@
     padding: 10px;
   } */
   img {
-    width: 100%;
+    width: 70%;
     height: 150px;
     object-fit: contain;
     padding: 15px;

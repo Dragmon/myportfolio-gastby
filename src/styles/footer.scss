@@ -1,0 +1,11 @@
+@import "./variables.scss";
+
+footer{
+  background-color: $color-footer;
+  .contFooter{
+    text-align: center;
+    color: $color-text1;
+    font-size: 1.5rem;
+    padding: 10px 0;
+  }
+}
