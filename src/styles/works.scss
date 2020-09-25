@@ -23,7 +23,7 @@
 .blockWork {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-  grid-template-rows: 50vh;
+  grid-template-rows: 50vh 50vh;
   grid-gap: 30px;
   @include widthSection;
   @media (max-width: $breakpoint-desktop-1300) {
@@ -48,7 +48,11 @@
   &:hover {
     transform: scale(1.2);
   }
-  &:nth-child(even) {
+  &:nth-child(2),
+  &:nth-child(5) {
+    align-self: end;
+  }
+  /* &:nth-child(even) {
     align-self: end;
     h3 {
       top: 20%;
@@ -58,13 +62,14 @@
     h3 {
       top: 10%;
     }
-  }
+  } */
   /* img {
     width: 80%;
   } */
   h3 {
     position: absolute;
     left: 85%;
+    top: 30px;
     font-size: 1.6rem;
     border-bottom: 3px solid $color-secondary;
   }

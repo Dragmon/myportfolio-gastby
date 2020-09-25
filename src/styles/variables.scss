@@ -7,6 +7,7 @@ $background-button: #ac9c91;
 $color-text1: #fdfefa;
 $color-text2: #051a6b;
 $color-footer: #1259B2;
+$hover-return:#93C1C0;
 $font-main: "Nunito", sans-serif;
 $font-secondary: "Roboto", sans-serif;
 $breakpoint-movil: 500px;
@@ -17,4 +18,15 @@ $breakpoint-desktop-1600: 1600px;
 @mixin widthSection {
   width: 75%;
   margin: 30px auto;
+}
+
+@mixin menu-span {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  width: 100%;
 }

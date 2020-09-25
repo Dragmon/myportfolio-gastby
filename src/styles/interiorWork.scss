@@ -48,5 +48,13 @@
         color: $color-text1;
       }
     }
+    svg{
+      &:hover{
+        path {
+          fill: $hover-return;
+          transition: all 2s ease
+        }
+      }
+    }
   }
 }

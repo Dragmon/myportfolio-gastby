@@ -2,13 +2,11 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
-import Layout from "../components/layout"
-import Footer from "../components/footer"
 import { ReturnIcon } from "../components/return-icon"
 
 export const query = graphql`
-  query workQuery($id: String!) {
-    strapiProjects(id: { eq: $id }) {
+  query workQuery($name_project: String!) {
+    strapiProjects(name_project: { eq: $name_project }) {
       id
       name_project
       url_site
@@ -29,7 +27,7 @@ const workTemplate = ({ data }) => {
   console.log("data template")
   console.log(data)
   return (
-    <Layout>
+    <>
       <SEO title={data.strapiProjects.name_project} />
       <section className="contentWork">
         <div className="imgSitio">
@@ -37,7 +35,6 @@ const workTemplate = ({ data }) => {
             fluid={data.strapiProjects.image_website.childImageSharp.fluid}
             alt={data.strapiProjects.name_project}
           />
-          <Footer />
         </div>
         <div className="infoSitio">
           <div className="positionInfo">
@@ -46,17 +43,19 @@ const workTemplate = ({ data }) => {
             </Link>
             <h2>{data.strapiProjects.name_project}</h2>
             <p>{data.strapiProjects.Description_project}</p>
-            <a
-              href={data.strapiProjects.url_site}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <button>Visitar sitio</button>
-            </a>
+            {data.strapiProjects.url_site ? (
+              <a
+                href={data.strapiProjects.url_site}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button>Visitar sitio</button>
+              </a>
+            ) : null}
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   )
 }
 

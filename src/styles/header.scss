@@ -6,13 +6,32 @@ header {
   background-color: $fading-color-primary;
 }
 .contHeader {
-  max-width: 1500px;
+  max-width: 1300px;
   height: 100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
+  &.active {
+    .menu2 {
+      span {
+        background: transparent;
+        &:before {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+        &:after {
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+    }
+    .listMenu{
+      right: 0;
+      transition: all .3s;
+    }
+  }
 }
 .logo {
   display: flex;
@@ -25,7 +44,7 @@ header {
     }
   }
 }
-nav {
+/* nav {
   width: 250px;
   padding: 1em;
   height: 100vh;
@@ -61,5 +80,55 @@ nav {
     list-style: none;
     font-size: 20px;
     line-height: 3em;
+  }
+} */
+
+.menu2 {
+  height: 50px;
+  display: flex;
+  float: right;
+  justify-content: flex-end;
+  align-items: center;
+  span {
+    background: #fff;
+    display: block;
+    height: 5px;
+    position: relative;
+    -webkit-transition: background 0.2s ease-out;
+    transition: background 0.2s ease-out;
+    width: 30px;
+    &:before {
+      @include menu-span;
+      top: 10px;
+    }
+    &:after {
+      @include menu-span;
+      top: -10px;
+    }
+  }
+}
+
+.listMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background: rgba(59,100,108,0.79);
+  z-index: -1;
+  margin: 100px 0 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 20%;
+  ul{
+    li {
+      list-style: none;
+      font-size: 20px;
+      line-height: 3em;
+    }
   }
 }

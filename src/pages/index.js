@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Mydescription from "../components/mydescription"
-import Footer from "../components/footer"
 
 export const query = graphql`
   query IndexQuery {
@@ -82,7 +81,7 @@ const IndexPage = ({ data }) => {
         <div className="blockWork">
           {data.allStrapiProjects.edges.map(document => (
             <div key={document.node.id} className="gridItem">
-              <Link to={`/${document.node.id}`}>
+              <Link to={`/${document.node.name_project}`}>
                 <Img
                   fluid={document.node.featured_image.childImageSharp.fluid}
                   alt={document.node.name_project}
@@ -93,7 +92,6 @@ const IndexPage = ({ data }) => {
           ))}
         </div>
       </section>
-      <Footer />
     </>
   )
 }

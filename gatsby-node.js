@@ -6,48 +6,52 @@
 
 // You can delete this file if you're not using it
 
-const path = require('path')
+const path = require("path")
 
-const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
-  // Query for article nodes to use in creating pages.
-  resolve(
-    graphql(request).then(result => {
-      if (result.errors) {
-        reject(result.errors)
-      }
-      return result;
-    })
-  )
-});
+const makeRequest = (graphql, request) =>
+  new Promise((resolve, reject) => {
+    // Query for article nodes to use in creating pages.
+    resolve(
+      graphql(request).then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
+        return result
+      })
+    )
+  })
 
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage } = boundActionCreators
 
-  const getProject = makeRequest(graphql, `
+  const getProject = makeRequest(
+    graphql,
+    `
     {
       allStrapiProjects {
         edges {
           node {
-            id
             name_project
           }
         }
       }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     // Create pages for each work.
     result.data.allStrapiProjects.edges.forEach(({ node }) => {
+      console.log("node", node)
       createPage({
-        path: `/${node.id}`,
+        path: `/${node.name_project}`,
         component: path.resolve(`src/templates/work.js`),
         context: {
-          id: node.id,
+          name_project: node.name_project,
         },
       })
     })
-  });
+  })
 
   /* const getAuthors = makeRequest(graphql, `
     {
@@ -78,4 +82,4 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     getAuthors,
   ]) */
   return getProject
-};
+}
