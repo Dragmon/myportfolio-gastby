@@ -36,8 +36,7 @@
     grid-template-rows: auto;
   }
   @media (max-width: $breakpoint-movil) {
-    width: 70%;
-    margin: 25px 0 25px 30px;
+    width: 90%;
   }
 }
 
@@ -52,25 +51,16 @@
   &:nth-child(5) {
     align-self: end;
   }
-  /* &:nth-child(even) {
-    align-self: end;
-    h3 {
-      top: 20%;
-    }
-  }
-  &:nth-child(odd) {
-    h3 {
-      top: 10%;
-    }
-  } */
-  /* img {
-    width: 80%;
-  } */
   h3 {
     position: absolute;
     left: 85%;
     top: 30px;
     font-size: 1.6rem;
     border-bottom: 3px solid $color-secondary;
+    @media (max-width: $breakpoint-desktop-1300) {
+      left: 0%;
+      background-color: $color-tertiary;
+      padding: 5px;
+    }
   }
 }
