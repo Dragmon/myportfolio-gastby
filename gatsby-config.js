@@ -28,6 +28,19 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-htaccess",
+      options: {
+        RewriteBase: "/custom/",
+        https: true,
+        www: true,
+        custom: `
+        <filesMatch ".(css|jpg|jpeg|png|gif|ico|ttf|svg)$">
+        Header set Cache-Control "max-age=2628000, public"
+        </filesMatch>
+        `,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

@@ -33,7 +33,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       allStrapiProjects {
         edges {
           node {
-            name_project
+            url_project
           }
         }
       }
@@ -44,10 +44,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     result.data.allStrapiProjects.edges.forEach(({ node }) => {
       console.log("node", node)
       createPage({
-        path: `/${node.name_project}`,
+        path: `/${node.url_project}`,
         component: path.resolve(`src/templates/work.js`),
         context: {
-          name_project: node.name_project,
+          url_project: node.url_project,
         },
       })
     })

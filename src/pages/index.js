@@ -12,6 +12,7 @@ export const query = graphql`
         node {
           id
           name_project
+          url_project
           Description_project
           featured_image {
             absolutePath
@@ -81,7 +82,7 @@ const IndexPage = ({ data }) => {
           {data.allStrapiProjects.edges.map(document => (
             <div key={document.node.id} className="gridItem">
               <Link
-                to={`/${document.node.name_project}`}
+                to={`/${document.node.url_project}`}
                 onClick={e => {
                   trackCustomEvent({
                     category: "My work",

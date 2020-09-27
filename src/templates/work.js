@@ -6,11 +6,12 @@ import SEO from "../components/seo"
 import { ReturnIcon } from "../components/return-icon"
 
 export const query = graphql`
-  query workQuery($name_project: String!) {
-    strapiProjects(name_project: { eq: $name_project }) {
+  query workQuery($url_project: String!) {
+    strapiProjects(url_project: { eq: $url_project }) {
       id
       name_project
       url_site
+      url_project
       Description_project
       image_website {
         childImageSharp {
@@ -27,7 +28,7 @@ export const query = graphql`
 const workTemplate = ({ data }) => {
   return (
     <>
-      <SEO title={data.strapiProjects.name_project} />
+      <SEO title={data.strapiProjects.url_project} />
       <section className="contentWork">
         <div className="imgSitio">
           <Img
