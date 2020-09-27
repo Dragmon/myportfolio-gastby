@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { ReturnIcon } from "../components/return-icon"
@@ -24,8 +25,6 @@ export const query = graphql`
 `
 
 const workTemplate = ({ data }) => {
-  console.log("data template")
-  console.log(data)
   return (
     <>
       <SEO title={data.strapiProjects.name_project} />
@@ -44,13 +43,13 @@ const workTemplate = ({ data }) => {
             <h2>{data.strapiProjects.name_project}</h2>
             <p>{data.strapiProjects.Description_project}</p>
             {data.strapiProjects.url_site ? (
-              <a
+              <OutboundLink
                 href={data.strapiProjects.url_site}
                 target="_blank"
                 rel="noreferrer"
               >
                 <button>Visitar sitio</button>
-              </a>
+              </OutboundLink>
             ) : null}
           </div>
         </div>

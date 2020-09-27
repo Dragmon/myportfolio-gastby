@@ -1,4 +1,5 @@
 import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import iconLinkedin from "../images/iconos/icono-linkedin.png"
 import iconGithub from "../images/iconos/icono-github.png"
 import iconEmail from "../images/iconos/icono-correo.png"
@@ -15,19 +16,23 @@ const myDescription = () => (
         el entorno laboral.
       </p>
       <div className="contact">
-        <a
+        <OutboundLink
           href="https://www.linkedin.com/in/charliegperez/"
           target="_blank"
           rel="noreferrer"
         >
           <img src={iconLinkedin} alt="Link Linkedin" />
-        </a>
-        <a href="mailto: carlos.perez@charliegperez.com">
+        </OutboundLink>
+        <OutboundLink href="mailto: carlos.perez@charliegperez.com">
           <img src={iconEmail} alt="Link email" />
-        </a>
-        <a href="https://github.com/Dragmon" target="_blank" rel="noreferrer">
+        </OutboundLink>
+        <OutboundLink
+          href="https://github.com/Dragmon"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={iconGithub} alt="Link github" />
-        </a>
+        </OutboundLink>
       </div>
     </div>
   </section>

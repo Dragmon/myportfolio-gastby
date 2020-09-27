@@ -1,10 +1,22 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
-    title: `My Portfolio`,
+    title: `Portfolio Carlos Gerardo Pérez Horta`,
     description: `Software Developmentt especialista en FrontEnd`,
     author: `Carlos Gerardo Pérez Horta`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_API_KEY,
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
     {
@@ -25,8 +37,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "http://localhost:1337",
-        /* apiURL: "https://strapi-my-dashboard.herokuapp.com", */
+        apiURL: process.env.GATSBY_API_URL,
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           `Skills`,

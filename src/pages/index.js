@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Mydescription from "../components/mydescription"
@@ -46,8 +47,6 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  /*   console.log("data: ")
-    console.log(data) */
   return (
     <>
       <SEO title="Home" />
@@ -81,7 +80,17 @@ const IndexPage = ({ data }) => {
         <div className="blockWork">
           {data.allStrapiProjects.edges.map(document => (
             <div key={document.node.id} className="gridItem">
-              <Link to={`/${document.node.name_project}`}>
+              <Link
+                to={`/${document.node.name_project}`}
+                onClick={e => {
+                  trackCustomEvent({
+                    category: "My work",
+                    action: "Click",
+                    label: `${document.node.name_project}`,
+                    value: `${document.node.id}`,
+                  })
+                }}
+              >
                 <Img
                   fluid={document.node.featured_image.childImageSharp.fluid}
                   alt={document.node.name_project}
