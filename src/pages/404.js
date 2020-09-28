@@ -7,9 +7,7 @@ const NotFoundPage = () => (
     <SEO title="404: Not found" />
     <section className="page404">
       <h1>NOT FOUND</h1>
-      <p>
-        La liga que usted visito no existe, favor de verficarlo
-      </p>
+      <p>La liga que usted visito no existe, favor de verificarlo</p>
       <div className="images404">
         <img src={spartant} alt="Spartan Halo" />
       </div>

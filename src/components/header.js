@@ -31,7 +31,9 @@ const Header = () => {
               <Link to="/#myInfomation"> Sobre mi </Link>
             </li>
             <li>
-              <Link to="/#skills"> Skills </Link>
+              <Link id="anchorSkills" to="/#skills">
+                Skills
+              </Link>
             </li>
             <li>
               <Link to="/#works"> Mis Proyectos </Link>

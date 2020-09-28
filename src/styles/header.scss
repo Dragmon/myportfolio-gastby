@@ -110,3 +110,11 @@ header {
     }
   }
 }
+
+#anchorSkills{
+  &:target{
+    .skills{
+      background: #000000;
+    }
+  }
+}
