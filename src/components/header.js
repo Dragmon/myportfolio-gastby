@@ -40,20 +40,6 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        {/*  <nav className="menu">
-        <img src={iconoMenu} alt="Menú" />
-        <ul>
-          <li>
-            <Link to="/#myInfomation"> Sobre mi </Link>
-          </li>
-          <li>
-            <Link to="/#skills"> Skills </Link>
-          </li>
-          <li>
-            <Link to="/#works"> Mis Proyectos </Link>
-          </li>
-        </ul>
-      </nav> */}
       </div>
     </header>
   )

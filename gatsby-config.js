@@ -3,9 +3,10 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Portfolio Carlos Gerardo Pérez Horta`,
+    title: `Portafolio Carlos Gerardo Pérez Horta`,
     description: `Software Developmentt especialista en FrontEnd`,
     author: `Carlos Gerardo Pérez Horta`,
+    url: `https://www.charliegperez.com`,
   },
   plugins: [
     {

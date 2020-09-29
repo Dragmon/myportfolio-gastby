@@ -1,13 +1,13 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { trackCustomEvent } from "gatsby-plugin-google-analytics"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import Mydescription from "../components/mydescription"
+import MySkills from "../components/myskills"
+import MyWorks from "../components/myworks"
 
 export const query = graphql`
   query IndexQuery {
-    allStrapiProjects {
+    allStrapiProjects(filter: { Activo: { eq: true } }) {
       edges {
         node {
           id
@@ -52,60 +52,8 @@ const IndexPage = ({ data }) => {
     <>
       <SEO title="Home" />
       <Mydescription />
-      {/* ============= Section Skills ============= */}
-      <section id="skills" className="skills">
-        <div className="contSkills">
-          <div className="titleSection">
-            <h2>Skills</h2>
-          </div>
-          <div className="blockSkills">
-            {data.allStrapiSkills.edges.map(document => (
-              <div key={document.node.id} className="imageSkill">
-                {/* <Img fluid={document.node.image_skill.childImageSharp.fluid} /> */}
-                {/* <Img
-                fixed={document.node.image_skill.childImageSharp.fixed}
-                alt={document.node.name_skill}
-              /> */}
-                <img
-                  src={document.node.image_skill.publicURL}
-                  alt={document.node.name_skill}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* ============= Section Work ============= */}
-      <section id="works" className="works">
-        <div className="contWorks">
-          <div className="titleSection">
-            <h2>Mis Proyectos</h2>
-          </div>
-          <div className="blockWork">
-            {data.allStrapiProjects.edges.map(document => (
-              <div key={document.node.id} className="gridItem">
-                <Link
-                  to={`/${document.node.url_project}`}
-                  onClick={e => {
-                    trackCustomEvent({
-                      category: "My work",
-                      action: "Click",
-                      label: `${document.node.name_project}`,
-                      value: `${document.node.id}`,
-                    })
-                  }}
-                >
-                  <Img
-                    fluid={document.node.featured_image.childImageSharp.fluid}
-                    alt={document.node.name_project}
-                  />
-                  <h3>{document.node.name_project}</h3>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <MySkills infoSkills={data.allStrapiSkills} />
+      <MyWorks infoWorks={data.allStrapiProjects} />
     </>
   )
 }

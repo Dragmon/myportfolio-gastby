@@ -4,6 +4,7 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { ReturnIcon } from "../components/return-icon"
+import "../styles/interiorWork.scss"
 
 export const query = graphql`
   query workQuery($url_project: String!) {

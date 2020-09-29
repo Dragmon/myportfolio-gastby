@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import spartant from "../images/spartanHalo.png"
+import "../styles/404.scss"
 
 const NotFoundPage = () => (
   <>

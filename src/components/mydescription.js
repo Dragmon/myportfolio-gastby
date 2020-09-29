@@ -3,6 +3,7 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 import iconLinkedin from "../images/iconos/icono-linkedin.png"
 import iconGithub from "../images/iconos/icono-github.png"
 import iconEmail from "../images/iconos/icono-correo.png"
+import "../styles/myDescription.scss"
 
 const myDescription = () => (
   <section id="myInfomation" className="myInfomation">
